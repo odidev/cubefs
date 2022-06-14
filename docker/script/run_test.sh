@@ -216,9 +216,7 @@ run_ltptest() {
     echo "        LTP test        ";
     echo "************************";
     LTPTestDir=$MntPoint/ltptest
-    echo "************************";
     LtpLog=/tmp/ltp.log
-    echo "************************";
     mkdir -p $LTPTestDir
     echo "#############################";
     nohup /bin/sh -c " /opt/ltp/runltp  -f fs -d $LTPTestDir > $LtpLog 2>&1; echo $? > /tmp/ltpret " &
