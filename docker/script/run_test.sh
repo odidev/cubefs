@@ -216,10 +216,13 @@ run_ltptest() {
     echo "        LTP test        ";
     echo "************************";
     LTPTestDir=$MntPoint/ltptest
+    echo "************************";
     LtpLog=/tmp/ltp.log
+    echo "************************";
     mkdir -p $LTPTestDir
     nohup /bin/sh -c " /opt/ltp/runltp  -f fs -d $LTPTestDir > $LtpLog 2>&1; echo $? > /tmp/ltpret " &
     wait_proc_done "runltp" $LtpLog
+    echo "************************";
 }
 
 stop_client() {
